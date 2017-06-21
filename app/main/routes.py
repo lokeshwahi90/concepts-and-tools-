@@ -3,8 +3,8 @@ from . import main
 from .forms import LoginForm
 
 
-@main.route('/', methods=['GET', 'POST'])
-def index():
+@main.route('/validateLogin', methods=['GET', 'POST'])
+def validateLogin():
     """Login form to enter a room."""
     form = LoginForm()
     if form.validate_on_submit():
@@ -26,3 +26,18 @@ def chat():
     if name == '' or room == '':
         return redirect(url_for('.index'))
     return render_template('chat.html', name=name, room=room)
+
+
+@main.route('/')
+def home():
+    return render_template('home.html')
+
+
+@main.route('/showSignin')
+def signin():
+    return render_template('signin.html')
+
+
+@main.route('/showSignUp')
+def signup():
+    return render_template('signup.html')

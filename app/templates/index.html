@@ -1,14 +1,26 @@
-<html>
+<!DOCTYPE html>
     <head>
-        <title>Flask-SocketIO-Chat</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <meta charset="utf-8">
+        <title>Chatting Project</title>
     </head>
     <body>
-        <h1>Flask-SocketIO-Chat</h1>
-        <form method="POST">
+        <div class="container">
+        <div class="well text-center">
+            <h1>Chat</small></h1>
+        </div>
+            <div class="form-group" >
+            <form method="POST" class="form-horizontal">
             {{ form.hidden_tag() }}
             {{ form.name.label }}: {{ form.name() }} {% for error in form.name.errors %}{{ error }}{% endfor %}<br>
-            {{ form.room.label }}: {{ form.room() }} {% for error in form.room.errors %}{{ error }}{% endfor %}<br>
+            {{ form.room.label }}: {{ form.room() }} {% for error in form.room.errors %}{{ error }}{% endfor %}<br><br>
             {{ form.submit() }}
-        </form>
+            </form>
+        </div>
+        </div>
     </body>
 </html>
